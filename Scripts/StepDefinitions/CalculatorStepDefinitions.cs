@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using Scripts.StepDefinitions.Driver;
 
+
 namespace Scripts.StepDefinitions
 {
     [Binding]
@@ -21,7 +22,7 @@ namespace Scripts.StepDefinitions
 
             Console.WriteLine("test ran");
             
-            driver.Navigate().GoToUrl("https://vinodksgithub.github.io/login.html");
+            driver.Navigate().GoToUrl(env.url);
             Thread.Sleep(2000);
         }
 
