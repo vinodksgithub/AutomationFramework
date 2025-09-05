@@ -1,0 +1,17 @@
+﻿{
+  "testenv_chrome": {
+    "browsername": "chrome",
+    "url": "https://vinodksgithub.github.io/login.html",
+    "testdata": "filename_test.xlsx"
+  },
+  "testenv_edge": {
+    "browsername": "edge",
+    "url": "https://www.abc.com",
+    "testdata": "filename_test.xlsx"
+  },
+  "staging_env_edge": {
+    "browsername": "edge",
+    "url": "https://www.abcstaging.com",
+    "testdata": "filename_test.xlsx"
+  }
+}
