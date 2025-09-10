@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using Scripts.StepDefinitions.Driver;
+using System;
 
 
 namespace Scripts.StepDefinitions
@@ -9,10 +10,8 @@ namespace Scripts.StepDefinitions
     {
         // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
 
-       
-
-        [Given("the first number are {int}")]
-        public void GivenTheFirstNumberIs(int number)
+        [Given("Launch Git URL")]
+        public async Task GivenLaunchGitURL()
         {
             //TODO: implement arrange (precondition) logic
             // For storing and retrieving scenario-specific data see https://go.reqnroll.net/doc-sharingdata
@@ -21,12 +20,14 @@ namespace Scripts.StepDefinitions
             // method. 
 
             Console.WriteLine("test ran");
+            if (env?.url != null)
+            {
+                await Task.Run(() => driver?.Navigate().GoToUrl(env.url));
+            }
             
-            driver.Navigate().GoToUrl(env.url);
             Thread.Sleep(2000);
         }
 
-        
 
         [Given("the second number is {int}")]
         public void GivenTheSecondNumberIs(int number)

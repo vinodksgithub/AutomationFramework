@@ -1,10 +1,10 @@
-Feature: Calculator
+Feature: Launch Git portal
 
 Simple calculator for adding two numbers
 
 @mytag
-Scenario: Add two numbers
-	Given the first number are 50
+Scenario: Login to git portal
+	Given Launch Git URL 
 	And the second number is 70
 	When the two numbers are added
 	Then the result should be 120
