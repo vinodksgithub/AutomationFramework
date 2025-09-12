@@ -2,7 +2,9 @@
   "testenv_chrome": {
     "browsername": "chrome",
     "url": "https://vinodksgithub.github.io/login.html",
-    "testdata": "filename_test.xlsx"
+    "testdata": "filename_test.xlsx",
+    "page_load_time": 60,
+    "implicit_timeout":  6
   },
   "testenv_edge": {
     "browsername": "edge",

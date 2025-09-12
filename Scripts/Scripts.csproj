@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EnvConfigurations\EnvConfigurations.csproj" />
+    <ProjectReference Include="..\SeleniumPageFactory\SeleniumPageFactory.csproj" />
     <ProjectReference Include="..\WebdriverFactory\WebdriverFactory.csproj" />
   </ItemGroup>
 

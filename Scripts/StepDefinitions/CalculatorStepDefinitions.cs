@@ -1,14 +1,16 @@
 using OpenQA.Selenium;
-using Scripts.StepDefinitions.Driver;
+using AutomationFramework.Scripts.StepDefinitions.Driver;
 using System;
+using AutomationFramework.PageObjectFactory.PageObjects;
+using AutomationFramework.WebDriverFactory.WebelementExtension;
 
-
-namespace Scripts.StepDefinitions
+namespace AutomationFramework.Scripts.StepDefinitions.LoginPageStepDefinition
 {
     [Binding]
-    public sealed class CalculatorStepDefinitions:BaseDriver
+    public sealed class LoginPageStepDefinition:BaseDriver
     {
         // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
+        private LoginPage _loginPage = new LoginPage();
 
         [Given("Launch Git URL")]
         public async Task GivenLaunchGitURL()
@@ -23,33 +25,31 @@ namespace Scripts.StepDefinitions
             if (env?.url != null)
             {
                 await Task.Run(() => driver?.Navigate().GoToUrl(env.url));
+                
             }
             
             Thread.Sleep(2000);
         }
 
-
-        [Given("the second number is {int}")]
-        public void GivenTheSecondNumberIs(int number)
-        {
-            //TODO: implement arrange (precondition) logic
-            Console.WriteLine("test");
+        [When("User Inputs Username")]
+        public void WhenUserInputsUsername()
+        {             
+            _loginPage.EnterUsername(driver,"user1");
         }
 
-        [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
+        [When("User Inputs Password")]
+        public void WhenUserInputsPassword()
         {
-            //TODO: implement act (action) logic
-
-            Console.WriteLine("test");
+            _loginPage.EnterPassword(driver,"pwd");
         }
 
-        [Then("the result should be {int}")]
-        public void ThenTheResultShouldBe(int result)
+        [When("User Clicks Login Button")]
+        public void WhenUserClicksLoginButton()
         {
-            //TODO: implement assert (verification) logic
-
-            Console.WriteLine("test");
+            _loginPage.ClickButton(driver);
+            Thread.Sleep(3000);
         }
+
+
     }
 }

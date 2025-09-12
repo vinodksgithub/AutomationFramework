@@ -5,10 +5,10 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Reqnroll;
 
-namespace NSWebdriverFactory.SeleniumDriver
+namespace AutomationFramework.WebDriverFactory.SeleniumDriver
 {
   
-    public static class GoogleTest
+    public static class SeleniumDriver
     {
         public static IWebDriver? driver;
        

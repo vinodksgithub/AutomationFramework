@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "Scripts\Scripts.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebdriverFactory", "WebdriverFactory\WebdriverFactory.csproj", "{70C10FC4-C996-464B-B242-48598D9A623B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumPageFactory", "SeleniumPageFactory\SeleniumPageFactory.csproj", "{84DB9E24-BB21-4413-B6E1-6DF574224915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{70C10FC4-C996-464B-B242-48598D9A623B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70C10FC4-C996-464B-B242-48598D9A623B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70C10FC4-C996-464B-B242-48598D9A623B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84DB9E24-BB21-4413-B6E1-6DF574224915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84DB9E24-BB21-4413-B6E1-6DF574224915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84DB9E24-BB21-4413-B6E1-6DF574224915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84DB9E24-BB21-4413-B6E1-6DF574224915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
