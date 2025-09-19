@@ -1,8 +1,8 @@
 using OpenQA.Selenium;
-using AutomationFramework.Scripts.StepDefinitions.Driver;
+using AutomationFramework.Scripts.StepDefinitions;
 using System;
 using AutomationFramework.PageObjectFactory.PageObjects;
-using AutomationFramework.WebDriverFactory.WebelementExtension;
+using Reqnroll;
 
 namespace AutomationFramework.Scripts.StepDefinitions.LoginPageStepDefinition
 {
@@ -24,7 +24,9 @@ namespace AutomationFramework.Scripts.StepDefinitions.LoginPageStepDefinition
             Console.WriteLine("test ran");
             if (env?.url != null)
             {
-                await Task.Run(() => driver?.Navigate().GoToUrl(env.url));
+                await Task.Run(
+                    () => driver?.Navigate().GoToUrl(env.url)
+                    );
                 
             }
             
@@ -50,6 +52,11 @@ namespace AutomationFramework.Scripts.StepDefinitions.LoginPageStepDefinition
             Thread.Sleep(3000);
         }
 
+        [Then("User accepts Ok In Prompt")]
+        public void ThenUserAcceptsOkInPrompt()
+        {               
+            _loginPage.ClickOkPrompt(driver);
+        }
 
     }
 }

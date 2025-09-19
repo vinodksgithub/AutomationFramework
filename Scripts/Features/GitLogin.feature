@@ -8,3 +8,4 @@ Scenario: Login to git portal
 	When User Inputs Username
 	And User Inputs Password
 	And User Clicks Login Button
+	Then User accepts Ok In Prompt

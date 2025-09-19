@@ -12,13 +12,17 @@ namespace AutomationFramework.WebDriverFactory.SeleniumDriver
     {
         public static IWebDriver? driver;
        
-        public static void Setup()
+        public static void GetDriverInstance()
         {
             if (driver != null) return;                 // <-- idempotent
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
         }
 
+        public static IWebElement findelementext(this IWebDriver driver, By obj)
+        {
+            return driver.FindElement(obj);
+        }
 
     }
 }

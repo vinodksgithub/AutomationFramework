@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutomationFramework.WebDriverFactory.SeleniumDriver;
 using OpenQA.Selenium;
-using NSConfigLoader;
+using AutomationFramework.EnvConfigurations.Config;
 using NSENVSettings;
-using System.Net.Http;
+using Reqnroll;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
-namespace AutomationFramework.Scripts.StepDefinitions.Driver
+namespace AutomationFramework.Scripts.StepDefinitions
 {
     [Binding]
     public class BaseDriver
@@ -24,7 +19,7 @@ namespace AutomationFramework.Scripts.StepDefinitions.Driver
         public void BeforeScenario()
         {
             ConfigLoader loader = new ConfigLoader("environments.json");
-            env = loader.LoadConfigDetails();
+            env = loader.GetConfigDetails();
             
             if (!IsSiteUp(env.url))
             {
@@ -32,7 +27,7 @@ namespace AutomationFramework.Scripts.StepDefinitions.Driver
             }
             else
             {
-                SeleniumDriver.Setup();
+                SeleniumDriver.GetDriverInstance();
                 driver = SeleniumDriver.driver;
                 driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(env.page_load_timeout);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(env.implicit_timeout);
